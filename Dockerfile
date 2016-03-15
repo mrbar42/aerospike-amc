@@ -15,6 +15,4 @@ RUN wget -O amc.deb http://www.aerospike.com/download/amc/${AMC_VERSION}/artifac
     dpkg -i amc.deb && \
     rm amc.deb
 
-ADD start.sh /usr/bin/start.sh
-
 CMD ["/opt/amc/bin/gunicorn", "--config=/etc/amc/config/gunicorn_config.py", "flaskapp:app"]
